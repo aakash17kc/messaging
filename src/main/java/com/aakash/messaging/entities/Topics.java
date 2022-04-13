@@ -4,7 +4,8 @@ import com.aakash.messaging.utils.Required;
 import org.mongodb.morphia.annotations.Entity;
 
 @Entity(noClassnameStored = true)
-public class Topic extends BaseEntity {
+public class Topics extends BaseEntity {
+
   @Required
   private String topic;
   @Required

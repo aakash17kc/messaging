@@ -5,8 +5,11 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 
 public class MessagingException extends Exception {
 
-  String errorMessage;
-  String errorType;
+  private String errorMessage;
+  private String errorType;
+
+
+  private int errorCode;
 
   public String getErrorMessage() {
     return errorMessage;
@@ -25,12 +28,19 @@ public class MessagingException extends Exception {
     this.errorType = errorType;
   }
 
-  public MessagingException(String errorMessage, String errorType) {
+  public MessagingException(String errorMessage, String errorType, int errorCode) {
     super(errorMessage);
     this.errorMessage = errorMessage;
     this.errorType = errorType;
+    this.errorCode = errorCode;
   }
 
+  public int getErrorCode() {
+    return errorCode;
+  }
+  public void setErrorCode(int errorCode) {
+    this.errorCode = errorCode;
+  }
   public MessagingException(Exception exception) {
     super(exception.getMessage());
     this.errorMessage = getGenericExceptionMessage(exception);

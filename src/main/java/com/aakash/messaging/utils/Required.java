@@ -1,2 +1,7 @@
-package com.aakash.messaging.utils;public interface Required {
-}
+package com.aakash.messaging.utils;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Required { }

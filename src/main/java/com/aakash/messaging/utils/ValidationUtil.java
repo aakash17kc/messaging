@@ -12,7 +12,7 @@ public class ValidationUtil {
     Field[] classFields = tClass.getDeclaredFields();
     List<String> validationList = new ArrayList<>();
     for (Field field: classFields) {
-      if(jsonString.containsKey(field.getName())){
+      if(!jsonString.containsKey(field.getName()) && field.isAnnotationPresent(Required.class)){
         validationList.add(field.getName());
       }
     }
