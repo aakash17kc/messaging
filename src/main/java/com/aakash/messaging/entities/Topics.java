@@ -1,9 +1,15 @@
 package com.aakash.messaging.entities;
 
-public class Topics  extends BaseEntity{
+import com.aakash.messaging.utils.Required;
+import org.mongodb.morphia.annotations.Entity;
 
-  public String topic;
-  public String client;
+@Entity(noClassnameStored = true)
+public class Topic extends BaseEntity {
+  @Required
+  private String topic;
+  @Required
+  private String client;
+  private String status = "UNSUBSCRIBED";
 
 
   public String getTopic() {
@@ -20,6 +26,14 @@ public class Topics  extends BaseEntity{
 
   public void setClient(String client) {
     this.client = client;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
 

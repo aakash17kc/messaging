@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  mongo:
+    container_name: mongo-instance
+    restart: always
+    volumes:
+      - $HOME/docker_data/mongo
+    image: mongo
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
